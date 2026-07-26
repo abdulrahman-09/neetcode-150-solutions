@@ -1,9 +1,12 @@
+import arrayshashing.EncodeAndDecodeStringsSolution;
 import arrayshashing.GroupAnagramsSolution;
 import arrayshashing.TopKFrequentElementsSolution;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        TopKFrequentElementsSolution topKFrequentElementsSolution = new TopKFrequentElementsSolution();
-        System.out.println(topKFrequentElementsSolution.topKFrequent(new int[]{1,1,1,2,2,3}, 2));
+        EncodeAndDecodeStringsSolution encodeAndDecodeStringsSolution = new EncodeAndDecodeStringsSolution();
+        System.out.println(encodeAndDecodeStringsSolution.decode(encodeAndDecodeStringsSolution.encode(List.of("Hello","World"))));
     }
 }
