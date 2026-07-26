@@ -1,7 +1,9 @@
 import arrayshashing.GroupAnagramsSolution;
+import arrayshashing.TopKFrequentElementsSolution;
 
 public class Main {
     public static void main(String[] args) {
-        GroupAnagramsSolution groupAnagramsSolution = new GroupAnagramsSolution();
-        System.out.println(groupAnagramsSolution.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));    }
+        TopKFrequentElementsSolution topKFrequentElementsSolution = new TopKFrequentElementsSolution();
+        System.out.println(topKFrequentElementsSolution.topKFrequent(new int[]{1,1,1,2,2,3}, 2));
+    }
 }
