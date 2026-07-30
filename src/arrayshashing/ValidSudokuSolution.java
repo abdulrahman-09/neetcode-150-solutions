@@ -11,10 +11,9 @@ public class ValidSudokuSolution {
             Set<Character> existingNums = new HashSet<>();
             for (int j = 0; j < 9; j++) {
                 if (board[i][j] != '.') {
-                    if (existingNums.contains(board[i][j])) {
+                    if (!existingNums.add(board[i][j])) {
                         return false;
                     }
-                    existingNums.add(board[i][j]);
                 }
             }
         }
@@ -23,10 +22,9 @@ public class ValidSudokuSolution {
             Set<Character> existingNums = new HashSet<>();
             for (int j = 0; j < 9; j++) {
                 if (board[j][i] != '.') {
-                    if (existingNums.contains(board[j][i])) {
+                    if (!existingNums.add(board[j][i])) {
                         return false;
                     }
-                    existingNums.add(board[j][i]);
                 }
             }
         }
@@ -47,10 +45,9 @@ public class ValidSudokuSolution {
         for (int i = startRow; i < startRow + 3; i++) {
             for (int j = startColumn; j < startColumn + 3; j++) {
                 if (board[i][j] != '.') {
-                    if (existingNums.contains(board[i][j])) {
+                    if (!existingNums.add(board[i][j])) {
                         return false;
                     }
-                    existingNums.add(board[i][j]);
                 }
             }
         }
