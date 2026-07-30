@@ -7,7 +7,10 @@ import java.util.stream.Collectors;
 
 public class LongestConsecutiveSequenceSolution {
     public int longestConsecutive(int[] nums) {
-        Set<Integer> values = Arrays.stream(nums).boxed().collect(Collectors.toSet());
+        Set<Integer> values = new HashSet<>((int) (nums.length / 0.75));
+        for (int i : nums) {
+            values.add(i);
+        }
         int longestConsecutive = 0;
         for(int i : values) {
             if (!values.contains(i - 1)){
