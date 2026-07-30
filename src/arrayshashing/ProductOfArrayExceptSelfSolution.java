@@ -4,32 +4,16 @@ import java.util.Arrays;
 
 public class ProductOfArrayExceptSelfSolution {
     public int[] productExceptSelf(int[] nums) {
-        int zeros = 0;
-        int lastZeroIdx;
-        int product = 1;
         int n = nums.length;
         int[] res = new int[n];
-        for (int i : nums){
-            if (i == 0)
-                zeros++;
-            else
-                product *= i;
-            if (zeros == 2){
-                Arrays.fill(res, 0);
-                return res;
-            }
-        };
-        if (zeros == 0){
-            for (int i = 0; i < n; i++) {
-                res[i] = product / nums[i];
-            }
+        res[0] = 1;
+        for (int i = 1; i < n; i++) {
+            res[i] = res[i - 1] * nums[i - 1];
         }
-        if (zeros == 1){
-            Arrays.fill(res, 0);
-            for (int i = 0; i < n; i++) {
-                if (nums[i] == 0)
-                    res[i] = product;
-            }
+        int suf = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            res[i] *= suf;
+            suf *= nums[i];
         }
         return res;
     }
